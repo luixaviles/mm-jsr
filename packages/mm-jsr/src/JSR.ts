@@ -38,7 +38,7 @@ export class JSR {
    * @param value - real value to set
    * @param options - additional options for external handling
    */
-  public setRealValue (index: number, value: number, options: unknown): void {
+  public setRealValue (index: number, value: number, options?: unknown): void {
     this.engine.inputHandler.setRealValue(index, value, options);
   }
 
@@ -49,7 +49,7 @@ export class JSR {
    * @param value - ratio value to set
    * @param options - additional options for external handling
    */
-  public setRatioValue (index: number, value: number, options: unknown): void {
+  public setRatioValue (index: number, value: number, options?: unknown): void {
     this.engine.inputHandler.setRatioValue(index, value, options);
   }
 
