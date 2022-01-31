@@ -11,7 +11,7 @@ interface SetupCommand {
   modules: Module[];
 }
 
-export type ValueChangeHandler = (v: { index: number, real: number, ratio: number }) => void;
+export type ValueChangeHandler = (v: { index: number, real: number, ratio: number }, options?: unknown) => void;
 
 /**
  * Engine initializes and connects all modules together.
@@ -110,7 +110,7 @@ export class Engine {
    * Internal handler for reacting on any value changed.
    * Updates the state, triggers value change event handlers.
    */
-  private onValueChange (index: number, value: Value) {
+  private onValueChange (index: number, value: Value, options?: unknown) {
     if (!this.enabled) {
       return;
     }
@@ -127,7 +127,7 @@ export class Engine {
           index,
           ratio: newState.values[index].asRatio(),
           real: newState.values[index].asReal(),
-        });
+        }, options);
       });
     }
   }

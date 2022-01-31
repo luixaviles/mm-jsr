@@ -7,7 +7,7 @@ import { StateProcessor } from '@/StateProcessor';
 interface Ctor {
   config: ConfigDto;
   getState: () => StateDto;
-  onChange: (index: number, value: Value) => void;
+  onChange: (index: number, value: Value, options?: unknown) => void;
 }
 
 /**
