@@ -15,7 +15,8 @@
     "watch": "rollup --watch --config rollup.config.js",
     "test": "cross-env TS_NODE_PROJECT=tsconfig.test.json ava --verbose",
     "play": "ts-node -P tsconfig.test.json ./src/index.ts",
-    "docs": "typedoc ./src/api.ts"
+    "docs": "typedoc ./src/api.ts",
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^11.2.1",
